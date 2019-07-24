@@ -10,7 +10,7 @@ module.exports = {
 	   const index = db.profiles.data.find(data => data.userId === parseInt(userId))
 
 	   if(index){
-	       db.profiles.data[userId] = {userId, thumbnail, about}
+	       db.profiles.data[userId] = {userId: parseInt(userId), thumbnail, about}
 	       res.status(200).json(db.profiles.data)
 	   } 
 	   else {
